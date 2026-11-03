@@ -1,0 +1,5 @@
+.env
+*.env
+__pycache__/
+*.raw.mp3
+local_paths.json

@@ -1,15 +1,28 @@
 {
- "name": "heatmat_shorts_v1",
- "workdir": "C:/CapCutAssets/heatmat_ad",
+ "name": "heatmat_shorts_v2",
+ "workdir": "C:/CapCutAssets/heatmat_ad_v2",
  "src_dir": "C:/Users/IdeaPad/Desktop/클로드 영상편집 자동화/쇼핑쇼츠/heatmat",
- "script": "캠핑 첫날 밤, 패딩 입고 자다가 새벽 세 시에 깼어요. 바닥에서 올라오는 냉기, 침낭으로는 안 막히더라고요. 옆 텐트 분이 꺼내 준 게 이거였어요. 접어서 파우치에 넣는 전기매트. 전기장판을 들고 다닌다고? 접으면 가방 한 칸이고, 110볼트 겸용이라 해외에서도 된대요. 올겨울 캠핑이나 여행 가실 분은 댓글에 '매트' 남겨주세요~",
+ "style": "templates/channel_defaults.json",
+ "script": "전기장판, 이제 접어서 들고 다녀요! 캠핑이나 여행 가면 바닥에서 올라오는 냉기, 침낭 하나로는 부족할 때가 많죠. 이건 접어서 전용 파우치에 넣어 다니는 전기매트예요. 펼치면 오십에 백팔십 센티, 혼자 눕기 좋은 크기고요. 백십 볼트 겸용이라 해외여행 때도 챙겨 갈 수 있어요. 올겨울 캠핑이나 여행 준비하신다면, 제품 정보는 고정댓글에서 확인해 보세요.",
  "post_tempo": 1.06,
+ "top_text": ["전기장판을", "접어서 들고 다녀요"],
+ "bottom_texts": [
+  {"cut_at": "전기장판", "text": "접으면 파우치 하나"},
+  {"cut_at": "캠핑이나", "text": "바닥 냉기 걱정"},
+  {"cut_at": "펼치면", "text": "1인용 50×180"},
+  {"cut_at": "백십", "text": "110V 겸용"},
+  {"cut_at": "올겨울", "text": "겨울 캠핑 준비물"}
+ ],
+ "caption_display": {"오십에 백팔십 센티": "50×180cm", "백십 볼트": "110V"},
+ "caption_keywords": ["접어서", "냉기", "파우치", "50×180cm", "110V", "고정댓글"],
  "scenes": [],
  "thumb": {
   "clip": "",
   "t": 0,
-  "line1": "캠핑 가서 바닥이",
-  "line2": "안 차가웠어요"
+  "line1": "전기장판을",
+  "line2": "접어 다녀요",
+  "line1_color": "#FFFFFF",
+  "line2_color": "#F4C70F"
  },
  "handle": "YOGEOTTAE",
  "caption_size": 15
