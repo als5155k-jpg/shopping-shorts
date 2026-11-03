@@ -1,38 +1,147 @@
 {
  "_설명": "요거어때(YOGEOTTAE) 채널 공통 스타일. 모든 제품 config.json은 이 값을 기본으로 쓴다. 좌표는 1080x1920 픽셀 기준이고, capcut_x/capcut_y는 CapCut 위치값(x=(px-540)/540, y=(960-px)/960)이다. 위치값은 미리보기(docs/layout_preview.jpg) 기준 추정치라 CapCut에서 한 번 열어 확인해야 한다.",
  "channel": "요거어때",
- "video": {"platform": "YouTube Shorts", "width": 1080, "height": 1920, "fps": 30, "format": "mp4",
-           "duration_sec": [20, 35], "hook_within_sec": 2},
- "font": {"name": "KOTRA BOLD", "capcut_resource_id": "",
-          "_font_설명": "CapCut에서 코트라 볼드체를 텍스트에 한 번 적용해 저장한 프로젝트의 draft_content.json fonts[]에서 resource_id/path를 읽어 채운다."},
- "colors": {"main": "#FFFFFF", "accent": "#F4C70F", "outline": "#141414"},
- "top_text": {"color": "#FFFFFF", "lines_max": 2, "chars_per_line_max": 9, "px": 96,
-              "center_px": [540, 356], "capcut_x": 0.0, "capcut_y": 0.63,
-              "outline": true, "shadow": true, "hold": "전체 구간"},
- "bottom_text": {"color": "#F4C70F", "lines_max": 1, "chars_per_line_max": 10, "px": 76,
-                 "center_px": [540, 1450], "capcut_x": 0.0, "capcut_y": -0.51,
-                 "outline": true, "hold": "장면별 장점 문구로 교체 가능"},
- "captions": {"capcut_size": 15, "approx_px": 68, "color": "#FFFFFF", "keyword_color": "#F4C70F",
-              "outline": "#141414", "lines_max": 2, "chars_per_line_max": 11,
-              "center_px": [540, 1295], "capcut_x": 0.0, "capcut_y": -0.349,
-              "_자막_설명": "CapCut 15 = 약 68px는 기존 썸네일 배치값(크기 27·scale 0.805)에서 역산한 추정치. 첫 빌드 후 실제 화면에서 확인한다."},
- "watermark": {"text": "YOGEOTTAE", "color": "#FFFFFF", "opacity": 0.68, "px": 36, "bold": false,
-               "anchor": "right", "right_edge_px": 990, "center_y_px": 195,
-               "capcut_x": 0.667, "capcut_y": 0.797, "hold": "처음부터 끝까지 동일"},
- "ad_label": {"text": "[광고]", "color": "#FFFFFF", "opacity": 0.68, "px": 34,
-              "anchor": "left", "left_edge_px": 90, "center_y_px": 195,
-              "capcut_x": -0.759, "capcut_y": 0.797,
-              "_광고_설명": "쿠팡파트너스 수수료를 받는 영상이라 경제적 이해관계 표시를 유지한다. 워터마크와 겹치지 않게 좌상단으로 옮겼다."},
- "safe_area_px": {"top_ui_bottom": 140, "bottom_ui_top": 1560, "right_buttons_left": 930,
-                  "right_buttons_y": [1040, 1720], "side_margin": 90,
-                  "_안전영역_설명": "쇼츠 UI가 덮는 구역의 근사치. 기기·앱 버전에 따라 다르다."},
- "thumbnail": {"chars_total": [6, 12], "lines_max": 2, "line1_color": "#FFFFFF", "line2_color": "#F4C70F",
-               "candidates_min": 3, "file": "thumbnail_1080x1920.jpg",
-               "first_frame": "영상 맨 앞 1프레임에 썸네일 디자인을 넣는다"},
- "voice": {"engine": "ElevenLabs", "voice": "Kanna", "voice_id": "5I7B1di44aCL15NkP0jn",
-           "model": "eleven_multilingual_v2", "speed": 1.19, "post_tempo": 1.06, "trim_silence": true,
-           "avoid": "의성어·의태어(쏙, 착착, 스르륵 등). Kanna 발음이 어색함"},
- "audio_mix": {"voice_lufs": -14, "bgm_db_under_voice": -20, "bgm_ducking": true, "original_audio": "mute"},
- "cta": {"default": "제품 정보는 고정댓글에서 확인해 보세요.",
-         "_cta_설명": "링크를 실제로 올린 위치에 맞게 바꾼다(고정댓글 / 설명란 / 프로필 링크 등)."}
+ "video": {
+  "platform": "YouTube Shorts",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "format": "mp4",
+  "duration_sec": [
+   20,
+   35
+  ],
+  "hook_within_sec": 2
+ },
+ "font": {
+  "name": "KOTRA BOLD",
+  "capcut_resource_id": "",
+  "_font_설명": "CapCut에서 코트라 볼드체를 텍스트에 한 번 적용해 저장한 프로젝트의 draft_content.json fonts[]에서 resource_id/path를 읽어 채운다."
+ },
+ "colors": {
+  "main": "#FFFFFF",
+  "accent": "#F4C70F",
+  "outline": "#141414"
+ },
+ "top_text": {
+  "color": "#FFFFFF",
+  "lines_max": 2,
+  "chars_per_line_max": 9,
+  "px": 96,
+  "center_px": [
+   540,
+   356
+  ],
+  "capcut_x": 0.0,
+  "capcut_y": 0.63,
+  "outline": true,
+  "shadow": true,
+  "hold": "전체 구간",
+  "capcut_size": 21
+ },
+ "bottom_text": {
+  "color": "#F4C70F",
+  "lines_max": 1,
+  "chars_per_line_max": 10,
+  "px": 76,
+  "center_px": [
+   540,
+   1450
+  ],
+  "capcut_x": 0.0,
+  "capcut_y": -0.51,
+  "outline": true,
+  "hold": "장면별 장점 문구로 교체 가능",
+  "capcut_size": 17
+ },
+ "captions": {
+  "capcut_size": 15,
+  "approx_px": 68,
+  "color": "#FFFFFF",
+  "keyword_color": "#F4C70F",
+  "outline": "#141414",
+  "lines_max": 2,
+  "chars_per_line_max": 11,
+  "center_px": [
+   540,
+   1295
+  ],
+  "capcut_x": 0.0,
+  "capcut_y": -0.349,
+  "_자막_설명": "CapCut 15 = 약 68px는 기존 썸네일 배치값(크기 27·scale 0.805)에서 역산한 추정치. 첫 빌드 후 실제 화면에서 확인한다."
+ },
+ "watermark": {
+  "text": "YOGEOTTAE",
+  "color": "#FFFFFF",
+  "opacity": 0.68,
+  "px": 36,
+  "bold": false,
+  "anchor": "right",
+  "right_edge_px": 990,
+  "center_y_px": 195,
+  "capcut_x": 0.667,
+  "capcut_y": 0.797,
+  "hold": "처음부터 끝까지 동일",
+  "capcut_size": 8
+ },
+ "ad_label": {
+  "text": "[광고]",
+  "color": "#FFFFFF",
+  "opacity": 0.68,
+  "px": 34,
+  "anchor": "left",
+  "left_edge_px": 90,
+  "center_y_px": 195,
+  "capcut_x": -0.759,
+  "capcut_y": 0.797,
+  "_광고_설명": "쿠팡파트너스 수수료를 받는 영상이라 경제적 이해관계 표시를 유지한다. 워터마크와 겹치지 않게 좌상단으로 옮겼다.",
+  "capcut_size": 7
+ },
+ "safe_area_px": {
+  "top_ui_bottom": 140,
+  "bottom_ui_top": 1560,
+  "right_buttons_left": 930,
+  "right_buttons_y": [
+   1040,
+   1720
+  ],
+  "side_margin": 90,
+  "_안전영역_설명": "쇼츠 UI가 덮는 구역의 근사치. 기기·앱 버전에 따라 다르다."
+ },
+ "thumbnail": {
+  "chars_total": [
+   6,
+   12
+  ],
+  "lines_max": 2,
+  "line1_color": "#FFFFFF",
+  "line2_color": "#F4C70F",
+  "candidates_min": 3,
+  "file": "thumbnail_1080x1920.jpg",
+  "first_frame": "영상 맨 앞 1프레임에 썸네일 디자인을 넣는다",
+  "capcut_size": 26,
+  "line1_capcut_y": 0.51,
+  "line2_capcut_y": 0.365
+ },
+ "voice": {
+  "engine": "ElevenLabs",
+  "voice": "Kanna",
+  "voice_id": "5I7B1di44aCL15NkP0jn",
+  "model": "eleven_multilingual_v2",
+  "speed": 1.19,
+  "post_tempo": 1.06,
+  "trim_silence": true,
+  "avoid": "의성어·의태어(쏙, 착착, 스르륵 등). Kanna 발음이 어색함"
+ },
+ "audio_mix": {
+  "voice_lufs": -14,
+  "bgm_db_under_voice": -20,
+  "bgm_ducking": true,
+  "original_audio": "mute"
+ },
+ "cta": {
+  "default": "제품 정보는 고정댓글에서 확인해 보세요.",
+  "_cta_설명": "링크를 실제로 올린 위치에 맞게 바꾼다(고정댓글 / 설명란 / 프로필 링크 등)."
+ },
+ "_capcut_size_설명": "capcut_size는 CapCut 글자 크기 값. 기존 썸네일 배치(크기 27·scale 0.805 ≈ 100px)에서 1당 약 4.6px로 역산한 추정치."
 }

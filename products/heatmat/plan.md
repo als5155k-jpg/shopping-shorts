@@ -76,3 +76,14 @@ TTS용 대본:
 - 제목 예: 전기장판을 접어서 들고 다녀요 #캠핑 #겨울캠핑 #전기매트
 - 고정댓글: 파트너스 안내 문구 + 링크 + "해외에서 쓸 때는 플러그 모양 확인"
 - "유료 프로모션 포함" 체크
+
+## 7. CapCut 프로젝트 만들기 (PC에서 실행)
+```
+pip install pycapcut pillow
+python tools/make_capcut_draft.py products/heatmat/config.json
+```
+- CapCut 프로젝트 `heatmat_shorts_v2`가 생기고, 장면 자리표시 이미지는 `C:/CapCutAssets/heatmat_ad_v2/placeholders/`에 만들어진다.
+- CapCut 프로젝트 폴더가 기본 위치가 아니면 `--drafts "<경로>"`를 붙인다. 같은 이름이 있으면 CapCut을 닫고 `--replace`.
+- 트랙: 장면 / 자막(크기 15, 강조 단어 노랑) / 하단 노란 문구 / 상단 흰색 문구 / 썸네일 제목 2줄(맨 앞 1프레임) / YOGEOTTAE / [광고]
+- 촬영 영상이 생기면 회색 장면 클립을 우클릭 → 교체. 실행 결과에 몇 초에 어떤 컷을 넣을지 목록이 나온다.
+- 자막 타이밍은 추정치. 음성을 넣은 뒤 자막을 음성에 맞춰 다시 맞춘다.

@@ -77,17 +77,16 @@ def balanced_chunks(text, maxc, max_lines):
         k += 1
 
 
-def main(cfg_path, out_dir):
+def load_config(cfg_path):
     cfg = json.load(open(cfg_path, encoding="utf-8"))
     st = json.load(open(os.path.join(ROOT, cfg.get("style", "templates/channel_defaults.json")), encoding="utf-8"))
-    os.makedirs(out_dir, exist_ok=True)
-    font_path = os.environ.get("FONT") or (cfg.get("font_file") if cfg.get("font_file") and os.path.exists(cfg["font_file"]) else FALLBACK_FONT)
-    F = lambda s: ImageFont.truetype(font_path, s)
-    WHITE, ACC = hexrgb(st["colors"]["main"]), hexrgb(st["colors"]["accent"])
-    OUT = hexrgb(st["colors"]["outline"])
-    cap, wm, ad, top, bot = st["captions"], st["watermark"], st["ad_label"], st["top_text"], st["bottom_text"]
+    return cfg, st
 
-    # 1) 문장 조각 → 자막 청크 + 추정 시간
+
+def plan_chunks(cfg, st):
+    """대본 → 자막 청크 목록. 각 청크: start/dur(초), lines, spoken, first, bottom, shot.
+    animatic.py와 make_capcut_draft.py가 같은 타이밍을 쓰도록 여기 한 곳에서 계산한다."""
+    cap = st["captions"]
     phrases = [p.strip() for p in re.findall(r"[^,.!?~]+[,.!?~]?", cfg["script"]) if p.strip()]
     disp_map = cfg.get("caption_display", {})
     chunks, t = [], 0.0
@@ -116,6 +115,20 @@ def main(cfg_path, out_dir):
         cur_bot = pick(cfg.get("bottom_texts", []), c, "text") or cur_bot
         cur_shot = pick(cfg.get("storyboard", []), c, "shot") or cur_shot
         c["bottom"], c["shot"] = cur_bot, cur_shot
+
+    return chunks
+
+
+def main(cfg_path, out_dir):
+    cfg, st = load_config(cfg_path)
+    os.makedirs(out_dir, exist_ok=True)
+    font_path = os.environ.get("FONT") or (cfg.get("font_file") if cfg.get("font_file") and os.path.exists(cfg["font_file"]) else FALLBACK_FONT)
+    F = lambda s: ImageFont.truetype(font_path, s)
+    WHITE, ACC = hexrgb(st["colors"]["main"]), hexrgb(st["colors"]["accent"])
+    OUT = hexrgb(st["colors"]["outline"])
+    cap, wm, ad, top, bot = st["captions"], st["watermark"], st["ad_label"], st["top_text"], st["bottom_text"]
+
+    chunks = plan_chunks(cfg, st)
 
     def base(shot):
         img = Image.new("RGB", (W, H), (58, 64, 74))
